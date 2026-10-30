@@ -264,3 +264,21 @@ function handleKeyboard(event) {
 
 // Listens for keyboard key presses
 document.addEventListener("keydown", handleKeyboard);
+
+
+// Function to switch between light mode and dark mode
+function toggleDarkMode() {
+
+    // Adds or removes the dark-mode class from the body
+    document.body.classList.toggle("dark-mode");
+
+    // Gets the dark mode button
+    let themeButton = document.getElementById("theme-toggle");
+
+    // Changes the button text based on the current theme
+    if (document.body.classList.contains("dark-mode")) {
+        themeButton.textContent = "Light Mode";
+    } else {
+        themeButton.textContent = "Dark Mode";
+    }
+}

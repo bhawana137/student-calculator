@@ -1,5 +1,4 @@
 
-/* Removes default spacing from all elements */
 * {
     margin: 0;
     padding: 0;
@@ -12,13 +11,14 @@ body {
     background-color: #F5F2E9;
     color: #294638;
 
-    /* Centres the main container */
     display: flex;
     justify-content: center;
     align-items: center;
 
     min-height: 100vh;
     padding: 20px;
+
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Holds the calculator and history sections */
@@ -39,7 +39,6 @@ body {
     padding: 28px;
     border-radius: 18px;
 
-    /* Adds a soft shadow */
     box-shadow: 0 5px 20px rgba(41, 70, 56, 0.10);
 }
 
@@ -62,6 +61,16 @@ body {
     font-size: 13px;
 }
 
+/* Dark mode toggle button */
+#theme-toggle {
+    height: auto;
+    padding: 8px 14px;
+    margin-top: 12px;
+    font-size: 13px;
+    background-color: #47785B;
+    color: white;
+}
+
 /* Display section */
 .display-container {
     background-color: #F5F7F2;
@@ -70,7 +79,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Previous calculation display */
 #previous-display {
     color: #829087;
     font-size: 14px;
@@ -112,8 +120,7 @@ button {
     font-size: 19px;
     cursor: pointer;
 
-    /* Smooth colour transition */
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 /* Hover effect for normal buttons */
@@ -207,8 +214,6 @@ button:hover {
     border-bottom: 1px solid #EEEEEE;
     font-size: 14px;
     color: #53665A;
-
-    /* Prevents long calculations from overflowing */
     overflow-wrap: anywhere;
 }
 
@@ -220,16 +225,108 @@ button:hover {
     padding-top: 25px;
 }
 
+
+/* Dark mode styling */
+
+/* Dark mode webpage */
+body.dark-mode {
+    background-color: #202923;
+    color: #E8EFE9;
+}
+
+/* Calculator and history boxes */
+body.dark-mode .calculator,
+body.dark-mode .history-container {
+    background-color: #2C3830;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+body.dark-mode .heading h1,
+body.dark-mode .history-heading h2 {
+    color: #D5E8D8;
+}
+
+/* Subtitle and keyboard instruction */
+body.dark-mode .heading p,
+body.dark-mode .keyboard-info {
+    color: #A5B5A8;
+}
+
+/* Calculator display */
+body.dark-mode .display-container {
+    background-color: #202923;
+}
+
+body.dark-mode #display {
+    color: #E8EFE9;
+}
+
+body.dark-mode #previous-display {
+    color: #A5B5A8;
+}
+
+/* Normal calculator buttons */
+body.dark-mode .buttons button:not(.operator):not(.equal):not(.special) {
+    background-color: #3B4840;
+    color: #E8EFE9;
+}
+
+/* Normal button hover effect */
+body.dark-mode .buttons button:not(.operator):not(.equal):not(.special):hover {
+    background-color: #4B5B50;
+}
+
+/* Special buttons */
+body.dark-mode .special {
+    background-color: #455B4A;
+    color: #E8EFE9;
+}
+
+/* Operator buttons */
+body.dark-mode .operator {
+    background-color: #47785B;
+    color: white;
+}
+
+/* Equals button */
+body.dark-mode .equal {
+    background-color: #648D6D;
+    color: white;
+}
+
+/* History section */
+body.dark-mode #history-list li {
+    color: #D0DCD2;
+    border-bottom-color: #465249;
+}
+
+/* Empty history message */
+body.dark-mode #history-list .empty-history {
+    color: #A5B5A8;
+    border: none;
+}
+
+/* Clear history button */
+body.dark-mode #clear-history {
+    background-color: #455B4A;
+    color: #E8EFE9;
+}
+
+/* Dark mode toggle button */
+body.dark-mode #theme-toggle {
+    background-color: #D5E8D8;
+    color: #294638;
+}
+
 /* Responsive layout for tablets and mobile devices */
 @media screen and (max-width: 750px) {
 
-    /* Places history below the calculator */
     .main-container {
         flex-direction: column;
         align-items: center;
     }
 
-    /* Makes both sections fit smaller screens */
     .calculator,
     .history-container {
         width: 100%;

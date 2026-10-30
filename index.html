@@ -11,14 +11,22 @@
 
 <body>
 
-   
     <div class="main-container">
+
+        <!-- Main calculator section -->
         <div class="calculator">
+
             <div class="heading">
                 <h1>StudyMate</h1>
                 <p>Your everyday calculator</p>
+
+                <!-- Dark mode toggle button -->
+                <button id="theme-toggle" onclick="toggleDarkMode()">
+                    Dark Mode
+                </button>
             </div>
 
+            <!-- Calculator display -->
             <div class="display-container">
                 <div id="previous-display"></div>
                 <input type="text" id="display" value="0" readonly>
@@ -26,6 +34,7 @@
 
             <!-- Calculator buttons -->
             <div class="buttons">
+
                 <!-- First row -->
                 <button class="special" onclick="clearDisplay()">AC</button>
                 <button class="special" onclick="deleteNumber()">DEL</button>
@@ -58,7 +67,6 @@
 
             </div>
 
-
             <p class="keyboard-info">
                 Tip: You can also use your keyboard to calculate.
             </p>
@@ -83,6 +91,7 @@
         </div>
 
     </div>
+
     <script src="script.js"></script>
 
 </body>
