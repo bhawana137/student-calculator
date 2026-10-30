@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate - Student Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   
+    <div class="main-container">
+        <div class="calculator">
+            <div class="heading">
+                <h1>StudyMate</h1>
+                <p>Your everyday calculator</p>
+            </div>
+
+            <div class="display-container">
+                <div id="previous-display"></div>
+                <input type="text" id="display" value="0" readonly>
+            </div>
+
+            <!-- Calculator buttons -->
+            <div class="buttons">
+                <!-- First row -->
+                <button class="special" onclick="clearDisplay()">AC</button>
+                <button class="special" onclick="deleteNumber()">DEL</button>
+                <button class="special" onclick="percentage()">%</button>
+                <button class="operator" onclick="addOperator('/')">÷</button>
+
+                <!-- Second row -->
+                <button onclick="addNumber('7')">7</button>
+                <button onclick="addNumber('8')">8</button>
+                <button onclick="addNumber('9')">9</button>
+                <button class="operator" onclick="addOperator('*')">×</button>
+
+                <!-- Third row -->
+                <button onclick="addNumber('4')">4</button>
+                <button onclick="addNumber('5')">5</button>
+                <button onclick="addNumber('6')">6</button>
+                <button class="operator" onclick="addOperator('-')">−</button>
+
+                <!-- Fourth row -->
+                <button onclick="addNumber('1')">1</button>
+                <button onclick="addNumber('2')">2</button>
+                <button onclick="addNumber('3')">3</button>
+                <button class="operator" onclick="addOperator('+')">+</button>
+
+                <!-- Fifth row -->
+                <button onclick="toggleSign()">+/-</button>
+                <button onclick="addNumber('0')">0</button>
+                <button onclick="addNumber('.')">.</button>
+                <button class="equal" onclick="calculate()">=</button>
+
+            </div>
+
+
+            <p class="keyboard-info">
+                Tip: You can also use your keyboard to calculate.
+            </p>
+
+        </div>
+
+        <!-- Calculation history section -->
+        <div class="history-container">
+
+            <div class="history-heading">
+                <h2>Calculation History</h2>
+
+                <button id="clear-history" onclick="clearHistory()">
+                    Clear
+                </button>
+            </div>
+
+            <ul id="history-list">
+                <li class="empty-history">No calculations yet.</li>
+            </ul>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

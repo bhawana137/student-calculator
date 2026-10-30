@@ -1,0 +1,255 @@
+
+/* Removes default spacing from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main webpage styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F2E9;
+    color: #294638;
+
+    /* Centres the main container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Holds the calculator and history sections */
+.main-container {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Main calculator box */
+.calculator {
+    background-color: #FFFFFF;
+    width: 390px;
+    padding: 28px;
+    border-radius: 18px;
+
+    /* Adds a soft shadow */
+    box-shadow: 0 5px 20px rgba(41, 70, 56, 0.10);
+}
+
+/* Heading section */
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Main heading */
+.heading h1 {
+    color: #254D3B;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+/* Subtitle */
+.heading p {
+    color: #829087;
+    font-size: 13px;
+}
+
+/* Display section */
+.display-container {
+    background-color: #F5F7F2;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Previous calculation display */
+#previous-display {
+    color: #829087;
+    font-size: 14px;
+    text-align: right;
+    min-height: 18px;
+}
+
+/* Main calculator display */
+#display {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: #254D3B;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: right;
+
+    padding-top: 10px;
+}
+
+/* Calculator button layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* General button styling */
+button {
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+
+    background-color: #F1F4EE;
+    color: #294638;
+
+    font-size: 19px;
+    cursor: pointer;
+
+    /* Smooth colour transition */
+    transition: background-color 0.2s;
+}
+
+/* Hover effect for normal buttons */
+button:hover {
+    background-color: #E1E9DF;
+}
+
+/* AC and DEL buttons */
+.special {
+    background-color: #DDE8DC;
+    color: #254D3B;
+}
+
+/* Hover effect for special buttons */
+.special:hover {
+    background-color: #C9DCC8;
+}
+
+/* Mathematical operator buttons */
+.operator {
+    background-color: #47785B;
+    color: white;
+}
+
+/* Operator hover effect */
+.operator:hover {
+    background-color: #365F47;
+}
+
+/* Equals button */
+.equal {
+    background-color: #254D3B;
+    color: white;
+}
+
+/* Equals button hover effect */
+.equal:hover {
+    background-color: #183B2B;
+}
+
+/* Keyboard instruction */
+.keyboard-info {
+    color: #829087;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 18px;
+}
+
+/* Calculation history box */
+.history-container {
+    background-color: #FFFFFF;
+    width: 320px;
+    min-height: 250px;
+    padding: 20px;
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(41, 70, 56, 0.10);
+}
+
+/* History heading section */
+.history-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* History title */
+.history-heading h2 {
+    font-size: 18px;
+    color: #254D3B;
+}
+
+/* Clear history button */
+#clear-history {
+    background-color: #F1F4EE;
+    color: #47785B;
+    height: auto;
+    padding: 7px 12px;
+    font-size: 12px;
+}
+
+/* History list */
+#history-list {
+    list-style: none;
+}
+
+/* Each history item */
+#history-list li {
+    padding: 12px 8px;
+    border-bottom: 1px solid #EEEEEE;
+    font-size: 14px;
+    color: #53665A;
+
+    /* Prevents long calculations from overflowing */
+    overflow-wrap: anywhere;
+}
+
+/* Empty history message */
+#history-list .empty-history {
+    color: #999999;
+    text-align: center;
+    border: none;
+    padding-top: 25px;
+}
+
+/* Responsive layout for tablets and mobile devices */
+@media screen and (max-width: 750px) {
+
+    /* Places history below the calculator */
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Makes both sections fit smaller screens */
+    .calculator,
+    .history-container {
+        width: 100%;
+        max-width: 390px;
+    }
+}
+
+/* Adjusts button sizes on very small screens */
+@media screen and (max-width: 350px) {
+
+    .calculator {
+        padding: 15px;
+    }
+
+    .buttons {
+        gap: 7px;
+    }
+
+    button {
+        height: 52px;
+        font-size: 17px;
+    }
+}
